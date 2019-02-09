@@ -1,3 +1,4 @@
+require_relative 'date_time_type'
 module Types
     class LinkType < BaseObject
       field :id, ID, null: false

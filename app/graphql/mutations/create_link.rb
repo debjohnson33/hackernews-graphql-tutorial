@@ -13,5 +13,6 @@ module Mutations
           description: description,
           url: url,
         )
+      end
     end
-  end
+end

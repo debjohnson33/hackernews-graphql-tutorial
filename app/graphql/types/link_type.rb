@@ -1,10 +1,12 @@
 require_relative 'date_time_type'
 module Types
-    class LinkType < BaseObject
-      field :id, ID, null: false
-      # `created_at` is automatically camelcased to `createdAt`
-      field :created_at, DateTimeType, null: false
-      field :url, String, null: false
-      field :description, String, null: false
-    end
+  class LinkType < BaseObject
+    field :id, ID, null: false
+    field :url, String, null: false
+    field :description, String, null: false
+    # `posted_by` is automatically camelcased as `postedBy`
+    # field can be nil, because we added users relationship later
+    # "method" option remaps field to an attribute of Link model
+    field :posted_by, UserType, null: true, method: :user
   end
+end

@@ -6,17 +6,14 @@ class Mutations::CreateLinkTest < ActiveSupport::TestCase
   end
 
   test 'create a new link' do
-    user = create :user
 
     link = perform(
       url: 'http://example.com',
       description: 'description',
-      user: user
     )
 
     assert link.persisted?
     assert_equal link.description, 'description'
     assert_equal link.url, 'http://example.com'
-    assert_equal link.user, user
   end
 end
